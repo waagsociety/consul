@@ -15,3 +15,5 @@ env:
   matrix:
     - CI_NODE_INDEX=0
     - CI_NODE_INDEX=1
+after_success:
+  - coveralls
