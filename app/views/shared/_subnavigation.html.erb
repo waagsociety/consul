@@ -14,14 +14,24 @@
                                 controller_name == 'proposals',
                                 accesskey: "2" %>
     </li>
+
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
                                   polls_path,
                                   controller_name == "polls",
                                   accesskey: "3" %>
+    <% end %>
+
+    <% if feature?(:legislation) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
+                                legislation_processes_path,
+                                controller.class.parent == Legislation,
+                                accesskey: "l" %>
       </li>
     <% end %>
+
     <% if feature?(:spending_proposals) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),
@@ -30,6 +40,7 @@
                                   accesskey: "s" %>
       </li>
     <% end %>
+
     <% if feature?(:budgets) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets"),
@@ -38,6 +49,7 @@
                                   accesskey: "4" %>
       </li>
     <% end %>
+
     <li>
       <%= link_to t("layouts.header.more_info"),
                     more_info_path,
