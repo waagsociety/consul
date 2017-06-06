@@ -24,6 +24,7 @@ module Verification
 
   def residence_verified?
     residence_verified_at.present?
+    true
   end
 
   def sms_verified?
